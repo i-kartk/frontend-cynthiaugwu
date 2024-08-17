@@ -1,2 +1,4 @@
-# frontend-cynthiaugwu
-this is an frontend clone of a portfolio profile of cynthiaugwu
+# frontend-portfolio
+
+THIS IS AN PORTFOLIO LANDING PAGE.
+INSPIRED BY cynthiaaugwu(an awaards runner up website).
