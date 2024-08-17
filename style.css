@@ -345,14 +345,15 @@ nav a{
 }
 
 .footer{
+    height: 20vh;
     display: flex;
-    height: auto;
     align-items: center;
     justify-content: space-between;
     padding: 20px 30px;
     color: white;
     text-transform: uppercase;
-    position: relative;
+    position: relative; /* Ensure the footer itself is positioned relative */
+    z-index: 1;
 }
 
 .footer-left{
@@ -383,13 +384,14 @@ nav a{
 .credit {
     color: white;
     font-size: .8vw;
+    height: 2vh;
     opacity: .5;
-    text-align: right; /* Align text to the right */
-    padding-left: 2.5vw; /* Adjust spacing as needed */
+    text-align: right;
+    padding-left: 2.5vw;
     margin-right: 30px;
-    position: absolute; /* Use absolute positioning */
-    right: 0; /* Position at the right edge */
-    bottom: 0; /* Position at the bottom edge */
+    position: absolute; /* Absolute positioning for the credit */
+    right: 0;
+    bottom: 0;
     text-decoration: none;
     display: flex;
     align-items: center;
