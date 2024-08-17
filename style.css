@@ -346,11 +346,13 @@ nav a{
 
 .footer{
     display: flex;
+    height: auto;
     align-items: center;
     justify-content: space-between;
     padding: 20px 30px;
     color: white;
     text-transform: uppercase;
+    position: relative;
 }
 
 .footer-left{

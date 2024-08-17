@@ -95,13 +95,13 @@ function image_hover_animation(params) {
             value_of_cursor_from_div_top = value_of_cursor_from_top- value_of_div_from_top;
 
             xcurr = dets.clientX;
-            console.log(`x current: ${xcurr}`);
+            // console.log(`x current: ${xcurr}`);
             
             difference = xcurr - xprev
-            console.log(`difference: ${difference}`)
+            // console.log(`difference: ${difference}`)
 
             xprev = dets.clientX
-            console.log(`x previous: ${xprev}`);
+            // console.log(`x previous: ${xprev}`);
             
             let rotate_value = gsap.utils.clamp(-20,20, difference * .5);
 
@@ -132,9 +132,17 @@ function image_hover_animation(params) {
     });
 }
 
-function updateTime() {
-    function updateTime() {
-        const now = new Date();
+// function updateTime() {
+//     function Time() {
+        
+
+//     // Update the time immediately and then every second
+//     updateTime();
+//     setInterval(updateTime, 1000);
+// }
+
+setInterval(function time (){
+    const now = new Date();
         const options = {
             hour: '2-digit',
             minute: '2-digit',
@@ -144,15 +152,9 @@ function updateTime() {
         };
         const timeString = now.toLocaleTimeString('en-IN', options);
         document.getElementById('current-time').textContent = timeString;
-    }
-
-    // Update the time immediately and then every second
-    updateTime();
-    setInterval(updateTime, 1000);
-}
+    }, 1000);
 
 circleMouseFollower();
 circleFlatkaro();
 firstPageAnimation();
 image_hover_animation();
-updateTime();
