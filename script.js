@@ -132,7 +132,27 @@ function image_hover_animation(params) {
     });
 }
 
+function updateTime() {
+    function updateTime() {
+        const now = new Date();
+        const options = {
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            timeZoneName: 'short',
+            timeZone: 'Asia/Kolkata' // IST time zone
+        };
+        const timeString = now.toLocaleTimeString('en-IN', options);
+        document.getElementById('current-time').textContent = timeString;
+    }
+
+    // Update the time immediately and then every second
+    updateTime();
+    setInterval(updateTime, 1000);
+}
+
 circleMouseFollower();
 circleFlatkaro();
 firstPageAnimation();
 image_hover_animation();
+updateTime();
