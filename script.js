@@ -37,7 +37,6 @@ function circleFlatkaro() {
 
 function circleMouseFollower(xfinal, yfinal) {
     window.addEventListener("mousemove",function(dets) {
-        console.log(dets);
         const circle = document.querySelector(".mini-circle")
         circle.style.transform =`translate(${dets.clientX}px, ${dets.clientY}px) scale(${xfinal}, ${yfinal})`;  
     });   
@@ -73,6 +72,67 @@ function firstPageAnimation(){
         })
 }
 
+function image_hover_animation(params) {
+
+    const page_2_element = document.querySelectorAll(".element ")                
+    page_2_element.forEach(function(page_2_element){
+
+            // to rotate the image , we put it at top because whenever the mousemove event is so it don't reset the value of the prev
+            let difference = 0;
+            let xprev = 0; 
+            let img = page_2_element.querySelector("img")
+
+            
+            // this event to rotate and show image on hovering over the div
+        page_2_element.addEventListener("mousemove",function (dets) {
+
+            value_of_div_from_top = page_2_element.getBoundingClientRect().top;
+            value_of_cursor_from_top = dets.clientY;
+            value_of_cursor_in_x_axis = dets.clientX;
+
+            // now the difference of div from top and cursor will be the value of cursor from the top of the div
+
+            value_of_cursor_from_div_top = value_of_cursor_from_top- value_of_div_from_top;
+
+            xcurr = dets.clientX;
+            console.log(`x current: ${xcurr}`);
+            
+            difference = xcurr - xprev
+            console.log(`difference: ${difference}`)
+
+            xprev = dets.clientX
+            console.log(`x previous: ${xprev}`);
+            
+            let rotate_value = gsap.utils.clamp(-20,20, difference * .5);
+
+
+            // hr div ki hr ek alg image hai usko select krenge
+            gsap.to(img,{
+                opacity: 1,
+                ease: Power2,
+                top: value_of_cursor_from_div_top,
+                left: value_of_cursor_in_x_axis,
+                duration: .5,
+                rotate: rotate_value,
+
+                })
+        });
+
+
+        // this event to disappear the image when we stop hovering the div
+        page_2_element.addEventListener("mouseleave",function (dets) {
+            gsap.to(img,{
+                duration: .5,
+                ease: Power3,
+                opacity: 0,
+
+            });
+            
+        });
+    });
+}
+
 circleMouseFollower();
 circleFlatkaro();
 firstPageAnimation();
+image_hover_animation();
