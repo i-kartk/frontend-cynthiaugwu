@@ -374,7 +374,21 @@ nav a{
     color: white;
     text-decoration: none;
     font-weight: 500;
-    font-size: 15   px;
+    font-size: 15px;
 }
 
 
+.credit {
+    color: white;
+    font-size: .8vw;
+    opacity: .5;
+    text-align: right; /* Align text to the right */
+    padding-left: 2.5vw; /* Adjust spacing as needed */
+    margin-right: 30px;
+    position: absolute; /* Use absolute positioning */
+    right: 0; /* Position at the right edge */
+    bottom: 0; /* Position at the bottom edge */
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
